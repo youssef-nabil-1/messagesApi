@@ -1,4 +1,5 @@
 const express = require("express");
+const dotenv = require("dotenv");
 const bodyPasrser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -9,6 +10,7 @@ const authRouter = require("./routes/auth");
 const socket = require("./socket");
 
 const app = express();
+dotenv.config();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
