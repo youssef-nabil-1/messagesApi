@@ -66,11 +66,11 @@ app.use((error, req, res, next) => {
 
 mongoose
     .connect(
-        "mongodb+srv://youssefelahlawy3:sZoQ4W6SbwGSFKQR@cluster0.1g7geq0.mongodb.net/messages?retryWrites=true&w=majority&appName=Cluster0"
+        `mongodb+srv://${process.env.MONGO_DB_USERNAME}:${process.env.MONGO_DB_PASSWORD}@cluster0.1g7geq0.mongodb.net/${process.env.MONGO_DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`
     )
     .then((result) => {
         console.log("CONNECTED");
-        const httpServer = app.listen(8080);
+        const httpServer = app.listen(process.env.PORT || 8080);
         const io = socket.init(httpServer, {
             cors: {
                 origin: "*",
