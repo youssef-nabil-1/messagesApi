@@ -87,7 +87,3 @@ The API uses token-based authentication. Protected routes require a valid JWT to
 ## Error Handling
 
 The API implements centralized error handling with proper HTTP status codes and error messages.
-
-## License
-
-[Add your chosen license here]
